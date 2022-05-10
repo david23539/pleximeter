@@ -1,0 +1,61 @@
+<div class="cnt-pleximeter">
+  <div class="logo">
+    <img src="./assets/images/Pleximeter.svg" alt="">
+  </div>
+  <div class="clock">
+    <div class="display"
+    >
+      <span class="hour">{{hour <=9 ? '0' + hour: hour}}</span> :
+      <span class="minute">{{minute <=9 ? '0' + minute: minute}}</span> :
+      <span class="secons">{{secons <=9 ? '0' + secons: secons}}</span>
+    </div>
+  </div>
+  <div class="registry">
+    <div class="header">
+      <div class="display-hidden">
+        <span>F.Inicio</span>
+      </div>
+      <div>
+        <span>Proyecto</span>
+      </div>
+      <div class="display-hidden">
+        <span>Descripcion</span>
+      </div>
+      <div class="display-hidden">
+        <span>F.Fin</span>
+      </div>
+      <div>
+        <span>Tiempo</span>
+      </div>
+    </div>
+    <div class="body" *ngFor="let item of registry">
+      <div class="display-hidden">
+        <span>{{item.dateInit | date : 'dd/MM/yy, h:mm:ss a'}}</span>
+      </div>
+      <div>
+        <span>{{item.nameProyect}}</span>
+      </div>
+      <div class="display-hidden">
+        <span>{{item.descCall}}</span>
+      </div>
+      <div class="display-hidden">
+        <span>{{item.dateEnd | date : 'dd/MM/yy, h:mm:ss a'}}</span>
+      </div>
+      <div>
+        <span>{{item.timer}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="pause-start">
+      <button (click)="start()" [ngClass]="{'pause': startStop}">{{startStop ? 'Pause': 'Start'}}</button>
+    </div>
+    <div class="stop">
+      <button (click)="stop()">Stop</button>
+    </div>
+  </div>
+  <div class="footer">
+    <span> power by </span>
+    <img src="./assets/images/Logo.png" alt="">
+  </div>
+</div>

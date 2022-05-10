@@ -1,0 +1,147 @@
+.clock {
+  font-family: "Orbitron", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 168px;
+  margin-top: 2rem;
+
+  @media (max-width: 1800px) {
+    font-size: 150px;
+  }
+  @media (max-width: 1500px) {
+    font-size: 120px;
+  }
+  @media (max-width: 1000px) {
+    font-size: 100px;
+  }
+  @media (max-width: 750px) {
+    font-size: 65px;
+  }
+  @media (max-width: 450px) {
+    font-size: 40px;
+  }
+  .display {
+    background: black;
+    padding: 0 50px 0;
+    display: flex;
+    width: 61%;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    .hour, .minute, .secons {
+      width: 200px;
+    }
+  }
+}
+.registry {
+  display: flex;
+  max-height: 200px;
+  width: 80%;
+  font-family: "Orbitron", sans-serif;
+  margin: 0 auto;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  background: white;
+  box-shadow: 0 2px 9px 1px lightgrey;
+  border-radius: 5px;
+  padding: 1rem;
+  @media (max-width: 1000px) {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+
+  }
+
+  .header, .body {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    gap: 10px 10px;
+
+
+    div {
+      width: calc(100%  / 6);
+      @media (max-width: 1000px) {
+        width: initial;
+        white-space: nowrap;
+      }
+    }
+  }
+  .header {
+    font-weight: bold;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      width: 20%;
+      justify-content: flex-start;
+    }
+  }
+  .body {
+    margin-top: 1rem;
+    div {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @media (max-width: 1000px) {
+      margin-top: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      div {
+        margin-left: 60px;
+        width: 80%;
+
+      }
+    }
+
+  }
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 450px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  .pause-start {
+    button {
+      background: green;
+      &.pause {
+        background: yellow;
+        color: gray;
+      }
+    }
+  }
+  .stop {
+    button {
+      background: darkred;
+    }
+  }
+  button {
+    border-radius: 50%;
+    border: 0;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: sans-serif;
+  img {
+    width: 70px;
+  }
+}
